@@ -3,6 +3,7 @@ package de.ba.experiment.fizzbuzz;
 import org.junit.Test;
 
 import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
 
 public class FizzBuzzTest {
 
@@ -17,4 +18,18 @@ public class FizzBuzzTest {
     }
 
     // TODO: weitere Tests schreiben
+
+    @Test
+    public void fizzBuzzSmaller_One() {
+        String[] result = FizzBuzz.fizzBuzz(0);
+        assertEquals(result.length, 0);
+    }
+
+    @Test
+    public void fizzBuzzLength_isN(){
+        String[] result = FizzBuzz.fizzBuzz(10);
+        assertEquals(result.length, 10);
+    }
+
+
 }

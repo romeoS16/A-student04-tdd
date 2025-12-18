@@ -13,6 +13,17 @@ public class FizzBuzz {
 
     public static String[] fizzBuzz(int n) {
         // TODO: implementieren
-        return new String[0];
+
+        if (n <= 0){
+            String [] result = new String[0];
+        }
+
+        String[] result = new String[n];
+
+        for (int i=0; i<n; i++){
+            result[i] = String.valueOf(i +1);
+        }
+
+        return result;
     }
 }
