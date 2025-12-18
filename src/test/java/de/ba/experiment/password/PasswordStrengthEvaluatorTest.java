@@ -17,4 +17,26 @@ public class PasswordStrengthEvaluatorTest {
     }
 
     // TODO: weitere Tests ergänzen
+
+    @Test
+    public void invalidPassword() {
+        String result = PasswordStrengthEvaluator.evaluateStrength(null);
+        assertEquals("WEAK", result);
+    }
+
+    @Test
+    public void tooShort() {
+        String result = PasswordStrengthEvaluator.evaluateStrength("test");
+        assertEquals("WEAK", result);
+    }
+
+    @Test
+    public void fullfillsTwoConditions() {
+        String result = PasswordStrengthEvaluator.evaluateStrength("ab1aaaaaaaA");
+        assertEquals("MEDIUM", result);
+    }
+
+
+    // mehr Tests zu der Punkte Verteilung
+
 }
